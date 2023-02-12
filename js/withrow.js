@@ -12,9 +12,16 @@ document.getElementById('btn-withdrow').addEventListener('click', function(){
   const previousBalanceString = previousBalanceElement.innerText;
   const previousBalanceAmount = parseFloat(previousBalanceString);
   const currentBalanceAmount = previousBalanceAmount - newWithrowAmount;
+
+  withdrowInputElement.value = '';
+  
+  if(newWithrowAmount > previousBalanceAmount){
+    alert("You Don't Have Withrow This Amount");
+    return;
+  }
   previousBalanceElement.innerText = currentBalanceAmount;
   previousWithrowElement.innerText = newWithrowAmount;
-  withdrowInputElement.value = '';
+  
 
   
 })
