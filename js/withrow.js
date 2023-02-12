@@ -7,6 +7,10 @@ document.getElementById('btn-withdrow').addEventListener('click', function(){
   const previousWithrowAmountString = previousWithrowElement.innerText;
   const previousWithrowAmount = parseFloat(previousWithrowAmountString);
   const newWithrowAmount = withdrowInputAmount + previousWithrowAmount;
+  if(isNaN(newWithrowAmount)){
+    alert('Not a number');
+    return;
+  }
 
   const previousBalanceElement = document.getElementById('balance');
   const previousBalanceString = previousBalanceElement.innerText;
